@@ -4,12 +4,14 @@
 <form method='post'>
     <label>
         Title for your new blog:
-        <input type="text" name='title' />
+        <input type="text" name='title' /><font color=red>{{err1}}</font>
     </label>
+</br>
     <label>
         Your new blog:
-        <input type="text" name='body' />
+        <input type="text" name='body' /><font color=red>{{err2}}</font>
     </label>
+</br>
     <input type="submit" value='Add Entry' />
 </form>
 

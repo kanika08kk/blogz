@@ -37,14 +37,29 @@ def index():
 
 @app.route('/new-entry', methods=['POST', 'GET'])
 def render_entry_form():
+    success="true"
     if request.method == 'POST':
         blog_name = request.form['title']
+        err1=""
+        
+        if(blog_name==""):
+            err1="Please enter Title"
+            success="false"
         body_name = request.form['body']
-        new_blog = Blog(blog_name,body_name)
-        db.session.add(new_blog)
-        db.session.commit()
+        err2=""
+        if(body_name==""):
+            err2="Please enter Body"
+            success="false"
+    
+        if(success=="true"):
+            new_blog = Blog(blog_name,body_name)
+            db.session.add(new_blog)
+            db.session.commit()
     blogs = Blog.query.all()
-    return render_template("new-entry.html", title="Build a blog!",blogs=blogs)
+    if(success=="false"):
+        return render_template("new-entry.html", title="Build a blog!",blogs=blogs,err1=err1,err2=err2)
+    else:
+        return render_template("new-entry.html", title="Build a blog!",blogs=blogs,err1="",err2="")
 @app.route('/single-entry', methods=['POST', 'GET'])
 def render_singleentry_form():
     blog_id = request.args.get('id')
