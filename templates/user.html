@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>{{ user.username }} Posts</h1>
+
+    {% if posts|length == 0 %}
+        <p>No posts yet</p>
+    {% else %}
+        <div class="all-posts">
+            {% for post in posts %}
+            <div class="single-post">
+                <h2>
+                    <a href="/blog?id={{ post.id }}">{{ post.title }}</a>
+                </h2>
+                <p>{{ post.body }}</p>
+
+                <p>Written by <a href="/blog?user={{ post.user.username }}">{{ post.user.username }}</a> on {{ post.date.strftime('%B %d, %Y') }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+{% endblock %}

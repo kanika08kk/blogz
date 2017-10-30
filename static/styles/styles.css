@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav a {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.all-posts {
+
+}
+
+.single-post {
+    padding: 1em;
+    border-bottom: 3px solid burlywood;
+}
+
+.single-post h2 {
+
+}
+
+.single-post p {
+
+}
+
+.flash-error-message {
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    color: red;
+}
+
+.error-message {
+    color: red;
+}
+
+input[type=text],
+input[type=password] {
+    width: 400px;
+    font-size: 20px;
+    padding: 2px;
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+    font-size: 17px;
+    font-family: monospace;
+}
+
+input[type=submit] {
+    font-size: 24px;
+}
+
+nav .user-account {
+    float: right;
+}
+
+.users {
+
+}
+
+.user {
+
+}

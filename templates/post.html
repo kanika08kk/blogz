@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="single-post">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+
+        <p>Written by <a href="/blog?user={{ post.user.username }}">{{ post.user.username }}</a> on {{ post.date.strftime('%B %d, %Y') }}</p>
+    </div>
+
+{% endblock %}
